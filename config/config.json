@@ -1,17 +1,17 @@
 {
 
-    
 
-    
 
-    
+
+
+
 
     "specialization": {
     },
 
     "middleware": {
 
-        
+
 
         "static": {
             "module": {
@@ -23,7 +23,23 @@
             "module": {
                 "arguments": [{ "directory": "path:./controllers" }]
             }
-        }
+        },
 
+        "cors": {
+            "enabled": true,
+            "module": {
+                "name": "path:./middlewares/cors"
+            },
+            "priority": 10
+        },
+
+        "validation": {
+            "enabled": true,
+            "module": {
+                "name": "path:./middlewares/validation"
+            },
+            "route": "/map/generate",
+            "priority": 90
+        }
     }
 }
